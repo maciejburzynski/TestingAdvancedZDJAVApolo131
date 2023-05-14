@@ -31,7 +31,5 @@ class HelloWorldRestControllerTest {
         mockMvc.perform(get("http://localhost:8080/hello-world"))
                 .andDo(print())
                 .andExpect(content().string("Hello World"));
-
     }
-
 }
