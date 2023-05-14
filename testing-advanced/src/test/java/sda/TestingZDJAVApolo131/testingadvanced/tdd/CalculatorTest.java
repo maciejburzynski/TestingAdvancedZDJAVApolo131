@@ -13,17 +13,17 @@ public class CalculatorTest {
     Calculator calculator;
 
     @BeforeEach
-    void initCalculator(){
+    void initCalculator() {
         calculator = new Calculator();
     }
 
     @Test
-    void whenAddTwoNumbersThenReturnSumOfTheNumbers(){
+    void whenAddTwoNumbersThenReturnSumOfTheNumbers() {
 //    void givenCalculatorWhenAddTwoNumbersThenReturnSumOfTheNumbers(){ <- with given
 //    given
         // Calculator initiated in @BeforeEach
 //    when
-        int result = calculator.add(2,3);
+        int result = calculator.add(2, 3);
 //    then
         assertEquals(5, result);
         assertNotEquals(4, result);
@@ -32,7 +32,18 @@ public class CalculatorTest {
         Assertions.assertThat(result).isNotZero(); // AssertJ
         Assertions.assertThat(result).isCloseTo(4, Percentage.withPercentage(90)); // AssertJ
     }
-    
+
 //    add tests for subtraction in our Calculator
 
+    @Test
+    void whenSubtractTwoNumbersThenReturnDifferenceOfTheNumbers(){
+//        when
+        int result = calculator.subtract(10,6);
+//        then
+        assertEquals(4, result);
+        Assertions.assertThat(result)
+                .isNotZero()
+                .isGreaterThan(2)
+                .isPositive();
+    }
 }
